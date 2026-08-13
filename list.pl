@@ -16,3 +16,21 @@ Tail = [cat, bird] %Head gives first element.
 
 [_,X|_] = [dog,cat,bird].
 X = cat  %pop out the second element.
+
+
+analyse_list(List):-                    %matches non-empty lists.                                    
+    List = [Head|Tail],
+    write('This is the head of your list: '), write(Head),nl,
+    write('This is the tail of your list: '), write(Tail),nl.
+
+analyse_list([]):-						 %matches empty lists.
+    write('This is an empty list: '),nl.      
+
+    %queries:-
+    analyse_list([cat,dog,bird]).
+    This is the head of your list: cat
+    This is the tail of your list: [dog, bird]
+    1true
+    analyse_list([]).
+    This is an empty list:
+    1true
