@@ -34,3 +34,14 @@ analyse_list([]):-						 %matches empty lists.
     analyse_list([]).
     This is an empty list:
     1true
+
+
+
+second_element(List):-                  
+    List = [_,X|_],
+    write('This is the second element of your list: '), write(X),nl.
+
+    %query:
+    second_element([a,b,c,d]).
+    This is the second element of your list: b
+    1true
