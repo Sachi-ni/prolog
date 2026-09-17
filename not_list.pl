@@ -56,3 +56,22 @@ range(A, B, [A|R]):- Next is A+1, range(Next, B, R).
 
                     range(3, 11, X).
                     X = [3, 4, 5, 6, 7, 8, 9, 10, 11]
+
+
+count_odd([], 0):- !.
+
+count_odd([H|T], N):- 1 is H mod 2, !, count_odd(T, N1), N is N1+1.
+
+count_odd([_|T], N):- count_odd(T, N).
+
+                                        count_odd([0,2,9,5,6,4,8], N).
+                                        N = 2
+
+count_even([], 0):- !.
+
+count_even([H|T], N):- 0 is H mod 2, !, count_even(T, N1), N is N1+1.
+
+count_even([_|T], N):- count_even(T, N).
+
+                                        count_even([0,2,9,5,6,4,8], N).
+                                        N = 5
