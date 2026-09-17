@@ -48,3 +48,11 @@ likes(john, pizza).
           false
           member(X, [a,b,c]), !, X=b.
           false
+
+
+range(A, B, []):- A>B, !.
+range(A, A, [A]):- A=A, !.
+range(A, B, [A|R]):- Next is A+1, range(Next, B, R).
+
+                    range(3, 11, X).
+                    X = [3, 4, 5, 6, 7, 8, 9, 10, 11]
